@@ -29,7 +29,7 @@ I've created a script that will do the following:
 
 The script assumes that the tools have been installed in their default directories. The script will indicate if it encounters any errors.
 
-<a href="scripts/configure.cmd" download target="_blank">Please download and run the script now</a>
+<a href="https://raw.githubusercontent.com/WilbertOnGithub/GitTraining/master/scripts/configure.cmd" download target="_blank">Please download and run the script now</a>
 
 Finally, Git needs to know some user information. Please enter the following commands while using your own name and email address.
 

@@ -24,19 +24,20 @@ Now the tools have been downloaded they still need to be configured to work corr
 
 I've created a script that will do the following:
 
-* Add Notepad++ to your PATH environment variable
 * Configure Notepad++ as the default editor in Git
 * Configure P4Merge as the default diff/merge tool in Git.
 
 The script assumes that the tools have been installed in their default directories. The script will indicate if it encounters any errors.
 
-Please download and run the script now.
+<a href="scripts/configure.cmd" download target="_blank">Please download and run the script now</a>
 
 Finally, Git needs to know some user information. Please enter the following commands while using your own name and email address.
 
 `git config --global user.name "Wilbert van Dolleweerd"`
 
 `git config --global user.email wilbert.van.dolleweerd@ict.nl`
+
+Done! You now have a version of Git for Windows which is configured with the correct tooling.
 
 Are these instructions unclear? Since the instructions are in a Git repository, I accept pull requests! You can contact me at wilbert@arentheym.com.
 

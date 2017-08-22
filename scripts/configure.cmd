@@ -1,12 +1,16 @@
 @ECHO OFF
 
 IF NOT EXIST "C:\Program Files\Perforce\p4merge.exe" (
-    ECHO Could not find p4merge.exe at C:\Program Files\Perforce.
+    ECHO Could not find p4merge.exe at C:\Program Files\Perforce.    
+    ECHO Please check the path to see if you installed Perforce in the default location.    
+    ECHO Re-run the script after fixing this problem.    
     EXIT /B 1
 )
 
 IF NOT EXIST "C:\Program Files\Notepad++\notepad++.exe" (
     ECHO Could not find notepad++.exe at C:\Program Files\Notepad++.    
+    ECHO Please check the path to see if you installed Notepad++ in the default location.        
+    ECHO Re-run the script after fixing this problem.
     EXIT /B 1
 )
 

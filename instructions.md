@@ -1,12 +1,12 @@
 ****How to install and configure Git for Windows****
 
-These are the instructions on how to download, install and configure Git and associated tooling.
+These are the instructions on how to configure Git for Windows to start using it for the training.
 
-First of all, you need to download the following software:
+First of all, you need to **download and install** the following software:
 
 * [Git for Windows](https://git-scm.com/download/win)
 
-  Simply use the suggested defaults when installing.
+  Use the suggested defaults when installing.
 
 * [Notepad++](https://notepad-plus-plus.org/download) for use as an editor
 * [Perforce Merge Tool](https://www.perforce.com/downloads/visual-merge-tool) as a diff and merge tool

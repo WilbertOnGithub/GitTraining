@@ -6,7 +6,7 @@ First of all, you need to download and install the following software:
 
 ***Important note: I'm assuming you install the 64-bit versions of the software. The links below all lead to the 64-bit versions.***
 
-* [Git for Windows](https://github.com/git-for-windows/git/releases/download/v2.14.1.windows.1/Git-2.14.1-64-bit.exe)
+* [Git for Windows](https://git-scm.com/download/win)
 
   Use the suggested defaults when installing.
 

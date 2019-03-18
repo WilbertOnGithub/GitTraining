@@ -32,11 +32,16 @@ The script assumes that the tools have been installed in their default directori
 Now, open a command prompt and run the _configure.cmd_ script. If all goes well, you will see a message that Git has been configured correctly.
 
 
-Finally, there is one bit of configuration that cannot be handled by the script. Git needs to know your user information. Please enter the following commands in the command prompt while using your own name and email address.
+Almost there, there is one bit of configuration that cannot be handled by the script. Git needs to know your user information. Please enter the following commands in the command prompt while using your own name and email address.
 
 `git config --global user.name "Enter your full name here"`
 
 `git config --global user.email a.developer@ict.nl`
+
+
+And for the final step <a href="https://github.com/join" download target="_blank">you have to create a Github account.</a>. Use this link to create an account. You can use an existing Github account if you have
+one or you can create a new one using your ICT email address. Please send me the account you're using so I can add you to the repository we are going to use.
+
 
 Done! You now have a version of Git for Windows which is configured with the correct tooling.
 

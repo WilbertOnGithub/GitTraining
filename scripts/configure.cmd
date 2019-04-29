@@ -21,6 +21,7 @@ ECHO Found locations for P4Merge and Notepad++. Starting configuration...
 git config --global merge.tool p4merge
 git config --global diff.tool p4merge
 git config --global mergetool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+git config --global mergetool.keepBackup false
 
 git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 

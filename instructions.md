@@ -25,12 +25,9 @@ I've created a script that will do the following:
 * Configure Notepad++ as the default editor in Git
 * Configure P4Merge as the default diff/merge tool in Git.
 
+You should have received this script in an earlier email from me.
+
 The script assumes that the tools have been installed in their default directories. The script will indicate if it encounters any errors.
-
-<a href="https://cdn.rawgit.com/WilbertOnGithub/GitTraining/b604b858/scripts/configure.cmd" download target="_blank">Please download and save the script somewhere.</a>
-
-[Download](scripts/configure.cmd)
-
 
 Now, open a command prompt and run the _configure.cmd_ script. If all goes well, you will see a message that Git has been configured correctly.
 

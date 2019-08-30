@@ -1,28 +1,36 @@
 @ECHO OFF
 
-IF NOT EXIST "C:\Program Files\Perforce\p4merge.exe" (
-    ECHO Could not find p4merge.exe at C:\Program Files\Perforce.    
-    ECHO Please check the path to see if you installed the Perforce merge tool in the default location.    
-    ECHO If you installed p4merge in a different location please modify this script to use the correct location.           
-    ECHO Re-run the script after fixing this problem.    
-    EXIT /B 1
-)
-
-IF NOT EXIST "C:\Program Files (x86)\Notepad++\notepad++.exe" (
-    ECHO Could not find notepad++.exe at C:\Program Files (x86)\Notepad++.    
-    ECHO Please check the path to see if you installed Notepad++ in the default location.
-    ECHO If you installed Notepad++ in a different location please modify this script to use the correct location.       
-    ECHO Re-run the script after fixing this problem.
-    EXIT /B 1
-)
-
-ECHO Found locations for P4Merge and Notepad++. Starting configuration...
-
 git config --global merge.tool p4merge
 git config --global diff.tool p4merge
-git config --global mergetool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
 git config --global mergetool.keepBackup false
 
-git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+:ConfigureNotepad
+IF EXIST "C:\Program Files\Notepad++\notepad++.exe" (
+	git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+	GOTO ConfigureP4Merge
+)
+IF EXIST "C:\Program Files (x86)\Notepad++\notepad++.exe" (
+	git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+	GOTO ConfigureP4Merge
+)
+ECHO Could not find Notepad++ at Program Files\Notepad++ or Program Files (x86)\Notepad++. 
+ECHO Please check if you have installed it.
+ECHO Re-run the script after fixing this problem.
+EXIT /B 1
 
-ECHO Done! Your Git installation is now configured to use Notepad++ as an editor and P4Merge as a diff/mergetool.
+:ConfigureP4Merge
+IF EXIST "C:\Program Files\Perforce\p4merge.exe" (
+	git config --global mergetool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+	GOTO Succes
+)
+IF EXIST "C:\Program Files (x86)\Perforce\p4merge.exe" (
+	git config --global mergetool.p4merge.path "C:/Program Files (x86)/Perforce/p4merge.exe"
+	GOTO Succes
+)
+ECHO Could not find P4Merge at Program Files\Perforce\ or Program Files (x86)\Perforce\
+ECHO Please check if you have installed it.
+ECHO Re-run the script after fixing this problem.
+EXIT /B 1
+
+:Succes
+ECHO Succes! Your Git installation is now configured to use Notepad++ as an editor and P4Merge as a diff/mergetool.

@@ -29,6 +29,10 @@ The script assumes that the tools have been installed in their default directori
 
 <a href="https://cdn.rawgit.com/WilbertOnGithub/GitTraining/b604b858/scripts/configure.cmd" download target="_blank">Please download and save the script somewhere.</a>
 
+<a href="https://cdn.jsdelivr.net/gh/WilbertOnGithub/GitTraining/scripts/configure.cmd" download target="_blank">Please download and save the script somewhere.</a>
+
+https://cdn.jsdelivr.net/gh/user/repo@version/file
+
 Now, open a command prompt and run the _configure.cmd_ script. If all goes well, you will see a message that Git has been configured correctly.
 
 

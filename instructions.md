@@ -4,8 +4,6 @@ These are the instructions on how to configure Git for Windows to be able to use
 
 First of all, you need to download and install the following software:
 
-***Important note: I'm assuming you install the 64-bit versions of the software. The links below all lead to the 64-bit versions.***
-
 * [Git for Windows](https://git-scm.com/download/win)
 
   Use the suggested defaults when installing.

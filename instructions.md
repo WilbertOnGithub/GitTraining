@@ -8,7 +8,7 @@ First of all, you need to download and install the following software:
 
   Use the suggested defaults when installing.
 
-* [Notepad++](https://notepad-plus-plus.org/repository/7.x/7.5.1/npp.7.5.1.Installer.x64.exe) for use as an editor
+* [Notepad++](https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.1.4/npp.8.1.4.Installer.x64.exe) for use as an editor
 * [Perforce Merge Tool](http://www.perforce.com/downloads/perforce/r17.2/bin.ntx64/p4vinst64.exe) as a diff and merge tool
 
   When installing only select the merge tool as indicated in the screenshot below.
@@ -35,10 +35,6 @@ Almost there, there is one bit of configuration that cannot be handled by the sc
 `git config --global user.name "Enter your full name here"`
 
 `git config --global user.email a.developer@ict.nl`
-
-
-And for the final step <a href="https://github.com/join" download target="_blank">you have to create a Github account.</a>. Use this link to create an account. You can use an existing Github account if you have
-one or you can create a new one using your ICT email address. Please send me the account you're using so I can add you to the repository we are going to use.
 
 
 Done! You now have a version of Git for Windows which is configured with the correct tooling.

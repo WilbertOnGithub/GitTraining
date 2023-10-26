@@ -1,7 +1,7 @@
 @ECHO OFF
 
 IF EXIST "%LOCALAPPDATA%\Microsoft\WindowsApps\Winget.Exe" (
-	ECHO "Winget found - using it to install software"
+	ECHO Winget found - using it to install dependencies.
 	GOTO WinGetInstalled
 )
 ECHO Could not find Winget. Please check if you have installed it.
@@ -17,25 +17,24 @@ winget install -e --id Git.Git --accept-source-agreements --accept-package-agree
 winget install -e --id Notepad++.Notepad++ --accept-source-agreements --accept-package-agreements 
 winget install -e --id Perforce.P4Merge --accept-source-agreements --accept-package-agreements 
 
-REM Add Git to system path (and also to the current session in case the user immediately starts using git)
-SETX /M PATH "%PATH%C:\Program Files\Git\Cmd"
-PATH "%PATH%C:\Program Files\Git\Cmd"
+REM Add Git to system path
+SETX /M PATH "%PATH%C:\Program Files\Git"
 
 REM Configure Git to use P4Merge
 
-git config --global merge.tool p4merge
-git config --global diff.tool p4merge
-git config --global mergetool.keepBackup false
+"C:\Program Files\Git\cmd\git.exe" config --global merge.tool p4merge
+"C:\Program Files\Git\cmd\git.exe" config --global diff.tool p4merge
+"C:\Program Files\Git\cmd\git.exe" config --global mergetool.keepBackup false
 
 REM Set Notepad++ as main editor
 
 :ConfigureNotepad
 IF EXIST "C:\Program Files\Notepad++\notepad++.exe" (
-	git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+	"C:\Program Files\Git\cmd\git.exe" config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 	GOTO ConfigureP4Merge
 )
 IF EXIST "C:\Program Files (x86)\Notepad++\notepad++.exe" (
-	git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+	"C:\Program Files\Git\cmd\git.exe" config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 	GOTO ConfigureP4Merge
 )
 ECHO Could not find Notepad++ at Program Files\Notepad++ or Program Files (x86)\Notepad++. 
@@ -47,11 +46,11 @@ REM Explicitly set path to P4Merge
 
 :ConfigureP4Merge
 IF EXIST "C:\Program Files\Perforce\p4merge.exe" (
-	git config --global mergetool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+	"C:\Program Files\Git\cmd\git.exe" config --global mergetool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
 	GOTO Succes
 )
 IF EXIST "C:\Program Files (x86)\Perforce\p4merge.exe" (
-	git config --global mergetool.p4merge.path "C:/Program Files (x86)/Perforce/p4merge.exe"
+	"C:\Program Files\Git\cmd\git.exe" config --global mergetool.p4merge.path "C:/Program Files (x86)/Perforce/p4merge.exe"
 	GOTO Succes
 )
 ECHO Could not find P4Merge at Program Files\Perforce\ or Program Files (x86)\Perforce\
@@ -61,3 +60,4 @@ EXIT /B 1
 
 :Succes
 ECHO Succes! Your Git installation is now configured to use Notepad++ as an editor and P4Merge as a diff/mergetool.
+ECHO Close this terminal session now.

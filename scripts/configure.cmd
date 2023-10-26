@@ -32,7 +32,7 @@ REM Configure Git to use P4Merge
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global mergetool.keepBackup false
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global difftool.prompt false
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global user.email %email%
-"%PROGRAMFILES%\Git\cmd\git.exe" config --global user.name %name%
+"%PROGRAMFILES%\Git\cmd\git.exe" config --global user.name "%name%"
 
 REM Set Notepad++ as main editor
 

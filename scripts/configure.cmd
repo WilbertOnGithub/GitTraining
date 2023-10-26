@@ -10,10 +10,12 @@ ECHO https://learn.microsoft.com/en-us/windows/package-manager/winget/
 ECHO Re-run the script after fixing this problem.
 EXIT /B 1
 
-set /p "email=Enter your ICT email adres: "
-set /p "name=Enter your name: "
 
 :WinGetInstalled
+REM Ask for email and username to be used in the Git config
+SET /p "email=Enter your ICT email adres: "
+SET /p "name=Enter your name: "
+
 REM Use Winget to install all dependencies
 
 winget install -e --id Git.Git --accept-source-agreements --accept-package-agreements 

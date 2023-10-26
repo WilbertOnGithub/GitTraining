@@ -13,9 +13,9 @@ EXIT /B 1
 :WinGetInstalled
 REM Use Winget to install all dependencies
 
-winget install -e --id Git.Git
-winget install -e --id Notepad++.Notepad++
-winget install -e --id Perforce.P4Merge
+winget install -e --id --accept-source-agreements --accept-package-agreements Git.Git
+winget install -e --id --accept-source-agreements --accept-package-agreements Notepad++.Notepad++
+winget install -e --id --accept-source-agreements --accept-package-agreements Perforce.P4Merge
 
 REM Add Git to system path (and also to the current session in case the user immediately starts using git)
 SETX /M PATH "%PATH%C:\Program Files\Git\Cmd"

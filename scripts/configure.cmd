@@ -10,6 +10,9 @@ ECHO https://learn.microsoft.com/en-us/windows/package-manager/winget/
 ECHO Re-run the script after fixing this problem.
 EXIT /B 1
 
+set /p "email=Enter your ICT email adres: "
+set /p "name=Enter your name: "
+
 :WinGetInstalled
 REM Use Winget to install all dependencies
 
@@ -25,6 +28,9 @@ REM Configure Git to use P4Merge
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global merge.tool p4merge
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global diff.tool p4merge
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global mergetool.keepBackup false
+"%PROGRAMFILES%\Git\cmd\git.exe" config --global difftool.prompt false
+"%PROGRAMFILES%\Git\cmd\git.exe" config --global user.email %email%
+"%PROGRAMFILES%\Git\cmd\git.exe" config --global user.name %name%
 
 REM Set Notepad++ as main editor
 

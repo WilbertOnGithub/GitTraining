@@ -13,7 +13,7 @@ EXIT /B 1
 
 :WinGetInstalled
 REM Ask for email and username to be used in the Git config
-SET /p "email=Enter your ICT email adres: "
+SET /p "email=Enter your ICT email address: "
 SET /p "name=Enter your name: "
 
 REM Use Winget to install all dependencies

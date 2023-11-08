@@ -1,43 +1,26 @@
-****How to install and configure Git for Windows****
+**Installing necessary tooling for the Git training**
 
-These are the instructions on how to configure Git for Windows to be able to use it in the training. 
+To follow the training, Git and supporting tooling needs to be installed on your system. Please do this before attending the training.  
+I've created a script that will do the following: 
 
-First of all, you need to download and install the following software:
-
-* [Git for Windows](https://git-scm.com/download/win)
-
-  Use the suggested defaults when installing.
-
-* [Notepad++](https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.1.4/npp.8.1.4.Installer.x64.exe) for use as an editor
-* [Perforce Merge Tool](http://www.perforce.com/downloads/perforce/r17.2/bin.ntx64/p4vinst64.exe) as a diff and merge tool
-
-  When installing only select the merge tool as indicated in the screenshot below.
-
-  ![Install P4Merge](screenshots/install_p4merge.png)  
+* Ask for your name and email address
+* Download and install Git for Windows / Notepad++ / Performce Merge Tool
+* Use these to configure Git
+* Add Git to your PATH environment variable
 
 
-Now the tools have been downloaded they still need to be configured to work correctly in Git.
 
-I've created a script that will do the following:
+**How to run the script:**
 
-* Configure Notepad++ as the default editor in Git
-* Configure P4Merge as the default diff/merge tool in Git.
+* The script can be downloaded from this repository using the [following page](https://github.com/WilbertOnGithub/GitTraining/blob/master/scripts/configure_training.cmd). Use the "Raw" button to download the script. Windows might harm that this could be a harmful file, simply override the warning. ![](screenshots/download_script.png)
 
-You should have received this script in an earlier email from me.
-
-The script assumes that the tools have been installed in their default directories. The script will indicate if it encounters any errors.
-
-Now, open a command prompt and run the _configure.cmd_ script. If all goes well, you will see a message that Git has been configured correctly.
+* Open an elevated command prompt and go to the folder where the script is stored. ![](screenshots/elevated_command_prompt.png)
+* 
+* Run the script by typing `configure_training.cmd` and press enter. ![](screenshots/script_result.png)
 
 
-Almost there, there is one bit of configuration that cannot be handled by the script. Git needs to know your user information. Please enter the following commands in the command prompt while using your own name and email address.
 
-`git config --global user.name "Enter your full name here"`
-
-`git config --global user.email a.developer@ict.nl`
-
-
-Done! You now have a version of Git for Windows which is configured with the correct tooling.
+Done! You can close the command prompt.  
 
 Are these instructions unclear? Please contact me at wilbert.van.dolleweerd@ict.nl with any questions you might have.
 

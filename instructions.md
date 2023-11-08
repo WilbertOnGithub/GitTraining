@@ -4,8 +4,8 @@ To follow the training, Git and supporting tooling needs to be installed on your
 I've created a script that will do the following: 
 
 * Ask for your name and email address
-* Download and install Git for Windows / Notepad++ / Performce Merge Tool
-* Use these to configure Git
+* Download and install Git for Windows / Notepad++ / Perforce Merge Tool
+* Configure Git
 * Add Git to your PATH environment variable
 
 

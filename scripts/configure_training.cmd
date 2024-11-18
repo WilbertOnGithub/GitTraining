@@ -13,20 +13,18 @@ EXIT /B 1
 
 :WinGetInstalled
 REM Ask for email and username to be used in the Git config
-SET /p "email=Enter your ICT email address: "
-SET /p "name=Enter your name: "
+SET /p "email=Enter your ICT email address (i.e. wilbert.van.dolleweerd@ict.com): "
+SET /p "name=Enter your name (i.e. Wilbert van Dolleweerd): "
 
 REM Use Winget to install all dependencies
-
-winget install -e --id Git.Git --accept-source-agreements --accept-package-agreements 
-winget install -e --id Notepad++.Notepad++ --accept-source-agreements --accept-package-agreements 
-winget install -e --id Perforce.P4Merge --accept-source-agreements --accept-package-agreements 
+winget install -e --id Git.Git --accept-source-agreements --accept-package-agreements --source winget
+winget install -e --id Notepad++.Notepad++ --accept-source-agreements --accept-package-agreements --source winget
+winget install -e --id Perforce.P4Merge --accept-source-agreements --accept-package-agreements --source winget
 
 REM Add Git permanently to system path so we can use it in the training
 SETX /M PATH "%PATH%C:\Program Files\Git\Cmd"
 
 REM Configure Git to use P4Merge
-
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global merge.tool p4merge
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global diff.tool p4merge
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global mergetool.keepBackup false
@@ -35,7 +33,6 @@ REM Configure Git to use P4Merge
 "%PROGRAMFILES%\Git\cmd\git.exe" config --global user.name "%name%"
 
 REM Set Notepad++ as main editor
-
 :ConfigureNotepad
 IF EXIST "%PROGRAMFILES%\Notepad++\notepad++.exe" (
 	"%PROGRAMFILES%\Git\cmd\git.exe" config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
@@ -51,7 +48,6 @@ ECHO Re-run the script after fixing this problem.
 EXIT /B 1
 
 REM Explicitly set path to P4Merge
-
 :ConfigureP4Merge
 IF EXIST "%PROGRAMFILES%\Perforce\p4merge.exe" (
 	"%PROGRAMFILES%\Git\cmd\git.exe" config --global mergetool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
@@ -68,4 +64,4 @@ EXIT /B 1
 
 :Succes
 ECHO Succes! Your Git installation is now configured to use Notepad++ as an editor and P4Merge as a diff/mergetool.
-ECHO Close this terminal session now.
+ECHO You can close this terminal session now.

@@ -18,8 +18,8 @@ You can study the script to see that it does nothing malicious.
   ![](screenshots/download_script.png)
 
 
-* Open an elevated command prompt (cmd.exe, run as administrator) and go to the folder where the script is stored. This will probably be your downloads folder.
-  ![](screenshots/run_as_admin.png)
+* Open an elevated command prompt (cmd.exe, run as administrator) and go to the folder where the script is stored. This will probably be your downloads folder.  
+ ![](screenshots/run_as_admin.png)
 
 
 * Run the script by typing `configure_training.cmd` and press enter. ![](screenshots/script_result.png)

@@ -36,7 +36,8 @@ We now need to configure Git to use P4Merge as a mergetool.
 * Open an elevated command prompt (cmd.exe, run as administrator).
  ![](screenshots/run_as_admin.png)
 
-* Copy and paste each following line in the command prompt and execute each line. There should be a 'copy clipboard' button after each line for your convenience.
+* Copy and paste each following line in the command prompt and execute each line. 
+There should be a 'copy clipboard' button after each line for your convenience. (Tip: use right mouse button in the terminal to paste the command).
 
 ```
 git config --global merge.tool p4merge

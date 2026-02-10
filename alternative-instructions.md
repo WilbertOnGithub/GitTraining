@@ -55,10 +55,12 @@ git config --global mergetool.keepBackup false
 git config --global difftool.prompt false
 ```
 
+Below, you need to replace *replace.with@your.email*  with your own ICT email address.
 ```
 git config --global user.email replace.with@your.email
 ```
 
+Below, you need to replace *Place your name here*  with your own name.
 ```
 git config --global user.name "Place your name here"
 ```
